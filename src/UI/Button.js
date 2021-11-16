@@ -60,7 +60,7 @@ const StyledButton = styled.button`
     p.primary
       ? "var(--clr-accent)"
       : p.secondary
-      ? "var(--clr-med)"
+      ? "var(--clr-white)"
       : p.outline
       ? "transparent"
       : ""};
@@ -71,7 +71,7 @@ const StyledButton = styled.button`
   &:active {
     transform: scale(0.9);
     background: ${(p) =>
-      p.primary ? "var(--clr-white)" : p.secondary ? "#d6d6d7" : ""};
+      p.primary ? "var(--clr-white)" : p.secondary ? "var(--clr-accent)" : ""};
     border: ${(p) => (p.outline ? "1px solid var(--clr-accent)" : "")};
     color: ${(p) =>
       p.primary ? "var(--clr-dark)" : p.secondary ? "var(--clr-dark)" : ""};
