@@ -14,7 +14,7 @@ const Button = ({
   return (
     <>
       {external ? (
-        <a href={to}>
+        <a href={to} rel="noreferrer" target="_blank">
           <StyledButton
             primary={primary}
             secondary={secondary}
