@@ -22,7 +22,7 @@ const ProjectDescription = ({ desc, visit }) => {
       </div>
       <p>{desc}</p>
 
-      <Button external to={visit} primary>
+      <Button external to={visit} primary target="_blank">
         View Website
       </Button>
     </Wrapper>

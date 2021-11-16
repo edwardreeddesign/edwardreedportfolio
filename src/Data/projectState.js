@@ -159,8 +159,7 @@ export const ProjectState = () => {
       shortDescription: "A NextJs project",
       longDescription:
         "A small project using NextJs that allows users to set a Meetup with a description, address and image.",
-      visit:
-        "https://vercel.com/edwardreeddesign/nextjs-course-demo/GEue58VTksCFPAnTNsfsK2LdRwbW",
+      visit: "https://nextjs-course-demo-jade-pi.vercel.app",
     },
 
     {
@@ -199,7 +198,7 @@ export const ProjectState = () => {
       shortDescription: "Front End design for a Food App.",
       longDescription:
         "With the changing times, websites need the use for carts to order their products. This app allows users to add food to the cart, and submit orders.",
-      visit: "https://emdbmovieapp.netlify.app/",
+      visit: "https://react-foodorder-app.netlify.app",
     },
   ];
 };
