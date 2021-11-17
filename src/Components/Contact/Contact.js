@@ -50,18 +50,18 @@ const Contact = () => {
     formIsValid = true;
   }
 
-  const formSubmissionHandler = (e) => {
-    e.preventDefault();
+  // const formSubmissionHandler = (e) => {
+  //   e.preventDefault();
 
-    if (!formIsValid) {
-      return;
-    }
+  //   if (!formIsValid) {
+  //     return;
+  //   }
 
-    resetNameInput();
-    resetLastNameInput();
-    resetEmailInput();
-    resetCommentInput();
-  };
+  //   resetNameInput();
+  //   resetLastNameInput();
+  //   resetEmailInput();
+  //   resetCommentInput();
+  // };
 
   const nameInputClasses = nameInputHasError
     ? "form-control invalid"
