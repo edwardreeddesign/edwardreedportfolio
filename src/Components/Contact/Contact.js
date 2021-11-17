@@ -84,7 +84,11 @@ const Contact = () => {
         <motion.h1 variants={fade}>Contact</motion.h1>
         <motion.div variants={lineAnim} className="line"></motion.div>
 
-        <StyledForm onSubmit={formSubmissionHandler}>
+        <StyledForm
+          onSubmit={formSubmissionHandler}
+          method="POST"
+          data-netlify="true"
+        >
           <ControlGroup>
             <Name>
               <div className={nameInputClasses}>
@@ -92,6 +96,7 @@ const Contact = () => {
                 <input
                   type="text"
                   id="name"
+                  name="nameFirst"
                   onChange={nameChangeHandler}
                   value={enteredName}
                   onBlur={nameInputBlurHandler}
@@ -105,6 +110,7 @@ const Contact = () => {
                 <input
                   type="text"
                   id="name"
+                  name="nameLast"
                   onChange={lastNameChangeHandler}
                   value={enteredLastName}
                   onBlur={lastNameBlurHandler}
