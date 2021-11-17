@@ -16,7 +16,7 @@ const Contact = () => {
     hasError: nameInputHasError,
     valueChangeHandler: nameChangeHandler,
     inputBlurHandler: nameInputBlurHandler,
-    reset: resetNameInput,
+    // reset: resetNameInput,
   } = useInput(isNotEmpty);
 
   const {
@@ -25,7 +25,7 @@ const Contact = () => {
     hasError: lastNameInputHasError,
     valueChangeHandler: lastNameChangeHandler,
     inputBlurHandler: lastNameBlurHandler,
-    reset: resetLastNameInput,
+    // reset: resetLastNameInput,
   } = useInput(isNotEmpty);
 
   const {
@@ -34,14 +34,14 @@ const Contact = () => {
     hasError: emailInputHasError,
     valueChangeHandler: emailChangeHandler,
     inputBlurHandler: emailBlurHandler,
-    reset: resetEmailInput,
+    // reset: resetEmailInput,
   } = useInput(isEmail);
 
   const {
     value: enteredComment,
     valueChangeHandler: commentChangeHandler,
     inputBlurHandler: commentBlurHandler,
-    reset: resetCommentInput,
+    // reset: resetCommentInput,
   } = useInput(isComment);
 
   let formIsValid = false;
@@ -50,18 +50,18 @@ const Contact = () => {
     formIsValid = true;
   }
 
-  const formSubmissionHandler = (e) => {
-    e.preventDefault();
+  // const formSubmissionHandler = (e) => {
+  //   e.preventDefault();
 
-    if (!formIsValid) {
-      return;
-    }
+  //   if (!formIsValid) {
+  //     return;
+  //   }
 
-    resetNameInput();
-    resetLastNameInput();
-    resetEmailInput();
-    resetCommentInput();
-  };
+  //   resetNameInput();
+  //   resetLastNameInput();
+  //   resetEmailInput();
+  //   resetCommentInput();
+  // };
 
   const nameInputClasses = nameInputHasError
     ? "form-control invalid"
@@ -88,7 +88,7 @@ const Contact = () => {
           method="POST"
           data-netlify="true"
           name="contact"
-          onSubmit={formSubmissionHandler}
+          // onSubmit={formSubmissionHandler}
         >
           <ControlGroup>
             <Name>
