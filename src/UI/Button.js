@@ -11,6 +11,7 @@ const Button = ({
   external,
   disabled,
   type,
+  submit,
 }) => {
   return (
     <>
@@ -23,6 +24,7 @@ const Button = ({
             external={external}
             disabled={disabled}
             type={type}
+            submit={submit}
           >
             {children}
           </StyledButton>
@@ -36,6 +38,7 @@ const Button = ({
             external={external}
             disabled={disabled}
             type={type}
+            submit={submit}
           >
             {children}
           </StyledButton>

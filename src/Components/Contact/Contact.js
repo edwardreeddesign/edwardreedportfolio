@@ -16,7 +16,7 @@ const Contact = () => {
     hasError: nameInputHasError,
     valueChangeHandler: nameChangeHandler,
     inputBlurHandler: nameInputBlurHandler,
-    // reset: resetNameInput,
+    reset: resetNameInput,
   } = useInput(isNotEmpty);
 
   const {
@@ -25,7 +25,7 @@ const Contact = () => {
     hasError: lastNameInputHasError,
     valueChangeHandler: lastNameChangeHandler,
     inputBlurHandler: lastNameBlurHandler,
-    // reset: resetLastNameInput,
+    reset: resetLastNameInput,
   } = useInput(isNotEmpty);
 
   const {
@@ -34,14 +34,14 @@ const Contact = () => {
     hasError: emailInputHasError,
     valueChangeHandler: emailChangeHandler,
     inputBlurHandler: emailBlurHandler,
-    // reset: resetEmailInput,
+    reset: resetEmailInput,
   } = useInput(isEmail);
 
   const {
     value: enteredComment,
     valueChangeHandler: commentChangeHandler,
     inputBlurHandler: commentBlurHandler,
-    // reset: resetCommentInput,
+    reset: resetCommentInput,
   } = useInput(isComment);
 
   let formIsValid = false;
@@ -50,18 +50,18 @@ const Contact = () => {
     formIsValid = true;
   }
 
-  // const formSubmissionHandler = (e) => {
-  //   e.preventDefault();
+  const formSubmissionHandler = (e) => {
+    e.preventDefault();
 
-  //   if (!formIsValid) {
-  //     return;
-  //   }
+    if (!formIsValid) {
+      return;
+    }
 
-  //   resetNameInput();
-  //   resetLastNameInput();
-  //   resetEmailInput();
-  //   resetCommentInput();
-  // };
+    resetNameInput();
+    resetLastNameInput();
+    resetEmailInput();
+    resetCommentInput();
+  };
 
   const nameInputClasses = nameInputHasError
     ? "form-control invalid"
@@ -84,7 +84,12 @@ const Contact = () => {
         <motion.h1 variants={fade}>Contact</motion.h1>
         <motion.div variants={lineAnim} className="line"></motion.div>
 
-        <StyledForm method="POST" data-netlify="true" name="contact">
+        <StyledForm
+          method="POST"
+          data-netlify="true"
+          name="contact"
+          onSubmit={formSubmissionHandler}
+        >
           <ControlGroup>
             <Name>
               <div className={nameInputClasses}>
@@ -145,9 +150,12 @@ const Contact = () => {
                 />
               </div>
             </Name>
-            <div className="form-actions">
-              <Button primary disabled={!formIsValid} type="submit">
-                SUBMIT
+            <div className="buttons">
+              <button type="submit" className="btn" disabled={!formIsValid}>
+                Submit
+              </button>
+              <Button primary to="/">
+                Return Home
               </Button>
             </div>
           </ControlGroup>
@@ -274,6 +282,41 @@ const ControlGroup = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
+  }
+
+  .buttons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    gap: 2rem;
+
+    .btn {
+      cursor: pointer;
+      background: var(--clr-dark);
+      color: var(--clr-white);
+      text-decoration: none;
+      font-size: clamp(0.5rem, 3vw, 1.1rem);
+      border: none;
+      font-weight: 600;
+      border-radius: 0.5rem 0 0.5rem;
+      padding: 1.25rem 2.25rem;
+      text-align: center;
+      box-shadow: var(--box-shadow);
+
+      &:hover {
+        transform: scale(0.9);
+        background: var(--clr-accent);
+      }
+      &:disabled,
+      &:disabled:hover,
+      &:disabled:active {
+        background-color: #ccc;
+        color: #292929;
+        border-color: #ccc;
+        cursor: not-allowed;
+      }
+    }
   }
 `;
 
