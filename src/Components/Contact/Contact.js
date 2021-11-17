@@ -84,12 +84,7 @@ const Contact = () => {
         <motion.h1 variants={fade}>Contact</motion.h1>
         <motion.div variants={lineAnim} className="line"></motion.div>
 
-        <StyledForm
-          onSubmit={formSubmissionHandler}
-          method="POST"
-          data-netlify="true"
-          name="contact"
-        >
+        <StyledForm method="POST" data-netlify="true" name="contact">
           <ControlGroup>
             <Name>
               <div className={nameInputClasses}>
