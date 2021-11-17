@@ -88,10 +88,13 @@ const Contact = () => {
           onSubmit={formSubmissionHandler}
           method="POST"
           data-netlify="true"
+          name="contact"
         >
           <ControlGroup>
             <Name>
               <div className={nameInputClasses}>
+                <input type="hidden" name="form-name" value="contact" />
+
                 <label htmlFor="name">First Name</label>
                 <input
                   type="text"
@@ -124,8 +127,8 @@ const Contact = () => {
               <div className={emailInputClasses}>
                 <label htmlFor="name">E-mail Address</label>
                 <input
-                  type="text"
                   id="email"
+                  type="email"
                   onChange={emailChangeHandler}
                   value={enteredEmail}
                   onBlur={emailBlurHandler}
