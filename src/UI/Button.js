@@ -10,6 +10,7 @@ const Button = ({
   to,
   external,
   disabled,
+  type,
 }) => {
   return (
     <>
@@ -21,6 +22,7 @@ const Button = ({
             outline={outline}
             external={external}
             disabled={disabled}
+            type={type}
           >
             {children}
           </StyledButton>
@@ -33,6 +35,7 @@ const Button = ({
             outline={outline}
             external={external}
             disabled={disabled}
+            type={type}
           >
             {children}
           </StyledButton>
