@@ -148,7 +148,7 @@ const Contact = () => {
               </div>
             </Name>
             <div className="form-actions">
-              <Button primary disabled={!formIsValid}>
+              <Button primary disabled={!formIsValid} type="submit">
                 SUBMIT
               </Button>
             </div>
