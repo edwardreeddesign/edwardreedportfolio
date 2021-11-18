@@ -84,81 +84,79 @@ const Contact = () => {
         <motion.h1 variants={fade}>Contact</motion.h1>
         <motion.div variants={lineAnim} className="line"></motion.div>
 
-        <StyledForm
-          method="POST"
-          data-netlify="true"
-          name="contact"
-          // onSubmit={formSubmissionHandler}
-        >
-          <ControlGroup>
-            <Name>
-              <div className={nameInputClasses}>
-                <input type="hidden" name="form-name" value="contact" />
-
-                <label htmlFor="name">First Name</label>
-                <input
-                  type="text"
-                  id="name"
-                  name="nameFirst"
-                  onChange={nameChangeHandler}
-                  value={enteredName}
-                  onBlur={nameInputBlurHandler}
-                />
-                {nameInputHasError && (
-                  <p className="error-text">Please Enter a First Name.</p>
-                )}
+        <StyledForm>
+          <form name="contact" className="form" method="POST">
+            <input type="hidden" name="form-name" value="contact" />
+            <ControlGroup>
+              <Name>
+                <div className={nameInputClasses}>
+                  <label htmlFor="name">First Name</label>
+                  <input
+                    type="text"
+                    id="name"
+                    name="nameFirst"
+                    onChange={nameChangeHandler}
+                    value={enteredName}
+                    onBlur={nameInputBlurHandler}
+                  />
+                  {nameInputHasError && (
+                    <p className="error-text">Please Enter a First Name.</p>
+                  )}
+                </div>
+                <div className={lastNameInputClasses}>
+                  <label htmlFor="name">Last Name</label>
+                  <input
+                    type="text"
+                    id="name"
+                    name="nameLast"
+                    onChange={lastNameChangeHandler}
+                    value={enteredLastName}
+                    onBlur={lastNameBlurHandler}
+                  />
+                  {lastNameInputHasError && (
+                    <p className="error-text">Please Enter a Last Name.</p>
+                  )}
+                </div>
+              </Name>
+              <Name>
+                <div className={emailInputClasses}>
+                  <label htmlFor="name">E-mail Address</label>
+                  <input
+                    id="email"
+                    type="email"
+                    name="email"
+                    onChange={emailChangeHandler}
+                    value={enteredEmail}
+                    onBlur={emailBlurHandler}
+                  />
+                  {emailInputHasError && (
+                    <p className="error-text">Email must be a valid Email</p>
+                  )}
+                </div>
+                <div className="form-control">
+                  <label htmlFor="name">
+                    Comments <span>*Optional</span>
+                  </label>
+                  <textarea
+                    rows="4"
+                    cols="35"
+                    name="content"
+                    onChange={commentChangeHandler}
+                    value={enteredComment}
+                    onBlur={commentBlurHandler}
+                  />
+                </div>
+              </Name>
+              <div className="buttons">
+                <button type="submit" className="btn" disabled={!formIsValid}>
+                  Submit
+                </button>
+                <Button primary to="/">
+                  Return Home
+                </Button>
               </div>
-              <div className={lastNameInputClasses}>
-                <label htmlFor="name">Last Name</label>
-                <input
-                  type="text"
-                  id="name"
-                  name="nameLast"
-                  onChange={lastNameChangeHandler}
-                  value={enteredLastName}
-                  onBlur={lastNameBlurHandler}
-                />
-                {lastNameInputHasError && (
-                  <p className="error-text">Please Enter a Last Name.</p>
-                )}
-              </div>
-            </Name>
-            <Name>
-              <div className={emailInputClasses}>
-                <label htmlFor="name">E-mail Address</label>
-                <input
-                  id="email"
-                  type="email"
-                  onChange={emailChangeHandler}
-                  value={enteredEmail}
-                  onBlur={emailBlurHandler}
-                />
-                {emailInputHasError && (
-                  <p className="error-text">Email must be a valid Email</p>
-                )}
-              </div>
-              <div className="form-control">
-                <label htmlFor="name">
-                  Comments <span>*Optional</span>
-                </label>
-                <textarea
-                  rows="4"
-                  cols="35"
-                  onChange={commentChangeHandler}
-                  value={enteredComment}
-                  onBlur={commentBlurHandler}
-                />
-              </div>
-            </Name>
-            <div className="buttons">
-              <button type="submit" className="btn" disabled={!formIsValid}>
-                Submit
-              </button>
-              <Button primary to="/">
-                Return Home
-              </Button>
-            </div>
-          </ControlGroup>
+            </ControlGroup>
+          </form>
         </StyledForm>
       </Wrapper>
     </>
@@ -176,7 +174,7 @@ const Wrapper = styled(motion.div)`
   }
 `;
 
-const StyledForm = styled.form`
+const StyledForm = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -303,6 +301,7 @@ const ControlGroup = styled.div`
       padding: 1.25rem 2.25rem;
       text-align: center;
       box-shadow: var(--box-shadow);
+      transition: all 300ms ease-in-out;
 
       &:hover {
         transform: scale(0.9);
