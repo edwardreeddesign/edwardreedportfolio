@@ -12,6 +12,7 @@ import About from "./Pages/About";
 import Contact from "./Pages/Contact";
 import Projects from "./Pages/Projects";
 import ProjectDetail from "./Pages/ProjectDetail";
+import SubmitMessage from "./Pages/SubmitMessage";
 //Router
 import { Switch, Route, useLocation } from "react-router-dom";
 function App() {
@@ -34,6 +35,9 @@ function App() {
           </Route>
           <Route path="/contact" exact>
             <Contact />
+          </Route>
+          <Route path="/submitMessage" exact>
+            <SubmitMessage />
           </Route>
           <Route path="/projects/:id">
             <ProjectDetail />

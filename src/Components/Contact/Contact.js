@@ -85,7 +85,7 @@ const Contact = () => {
         <motion.div variants={lineAnim} className="line"></motion.div>
 
         <StyledForm>
-          <form name="contact" className="form" method="POST">
+          <form name="contact" className="form" method="post">
             <input type="hidden" name="form-name" value="contact" />
             <ControlGroup>
               <Name>
