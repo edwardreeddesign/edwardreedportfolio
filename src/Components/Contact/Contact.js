@@ -140,7 +140,7 @@ const Contact = () => {
                   <textarea
                     rows="4"
                     cols="35"
-                    name="content"
+                    name="message"
                     onChange={commentChangeHandler}
                     value={enteredComment}
                     onBlur={commentBlurHandler}
@@ -151,8 +151,8 @@ const Contact = () => {
                 <button type="submit" className="btn" disabled={!formIsValid}>
                   Submit
                 </button>
-                <Button primary to="/">
-                  Return Home
+                <Button secondary to="/">
+                  Home
                 </Button>
               </div>
             </ControlGroup>
@@ -291,8 +291,8 @@ const ControlGroup = styled.div`
 
     .btn {
       cursor: pointer;
-      background: var(--clr-dark);
-      color: var(--clr-white);
+      background: var(--clr-accent);
+      color: var(--clr-dark);
       text-decoration: none;
       font-size: clamp(0.5rem, 3vw, 1.1rem);
       border: none;
@@ -305,14 +305,15 @@ const ControlGroup = styled.div`
 
       &:hover {
         transform: scale(0.9);
-        background: var(--clr-accent);
+        background: var(--clr-med);
+        color: var(--clr-white);
       }
       &:disabled,
       &:disabled:hover,
       &:disabled:active {
-        background-color: #ccc;
+        /* background-color: #ccc;
         color: #292929;
-        border-color: #ccc;
+        border-color: #ccc; */
         cursor: not-allowed;
       }
     }

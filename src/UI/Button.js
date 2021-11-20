@@ -60,7 +60,7 @@ const StyledButton = styled.button`
   border-radius: 0.5rem 0 0.5rem;
   padding: 1.25rem 2.25rem;
   text-align: center;
-  border: ${(p) => (p.outline ? "1px solid var(--clr-accent)" : "none")};
+  border: ${(p) => (p.outline ? "1px  solid var(--clr-accent)" : "none")};
   box-shadow: ${(p) => (p.outline ? "none" : "var(--box-shadow)")};
   background: ${(p) =>
     p.primary
@@ -81,15 +81,6 @@ const StyledButton = styled.button`
     border: ${(p) => (p.outline ? "1px solid var(--clr-accent)" : "")};
     color: ${(p) =>
       p.primary ? "var(--clr-dark)" : p.secondary ? "var(--clr-dark)" : ""};
-  }
-
-  &:disabled,
-  &:disabled:hover,
-  &:disabled:active {
-    background-color: #ccc;
-    color: #292929;
-    border-color: #ccc;
-    cursor: not-allowed;
   }
 `;
 
